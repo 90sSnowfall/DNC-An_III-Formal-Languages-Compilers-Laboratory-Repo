@@ -1,0 +1,86 @@
+import time
+
+def options_print():
+    print("                                                                                                 ")
+    print("                                                                                                 ")
+    print("=================================================================================================")
+    print(" Welcome to Lidl Vending Machine MAX v0.0.0.0.0.1 :)  Pick your drink for today                  ")
+    print("=================================================================================================")
+    print("\n")
+    print("Pick one of the available options listed down below:                                             ")
+    print("_________________________________________________________________________________________________")
+    print("                                                                                                 ")
+    print("         _______________________                                                                 ")
+    print("         | C - Coffee          |                                                                 ")
+    print("         ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯                                                                 ")
+    print("                                                                                                 ")
+    print("         _______________________                                                                 ")
+    print("         | T - Tea             |                                                                 ")
+    print("         ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯                                                                 ")
+    print("                                                                                                 ")
+    print("         _______________________                                                                 ")
+    print("         | A - Cappucino       |                                                                 ")
+    print("         ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯                                                                 ")
+    print("                                                                                                 ")
+    print("         _______________________                                                                 ")
+    print("         | H - Hot Chocolate   |                                                                 ")
+    print("         ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯                                                                 ")
+    print("                                                                                                 ")
+    print("_________________________________________________________________________________________________")
+    print("                                                                                                 ")
+
+def confirmed_option(confirmation,option):
+    tempstring = ''
+    if(confirmation != "y"):
+        return 0
+    match option:
+        case "C":
+            tempstring = "Coffee"
+        case "T":
+            tempstring = "Tea"
+        case "A":
+            tempstring = "Cappucino"
+        case "H":
+            tempstring = "Hot Chocolate"
+    print("                                                                                                 ")
+    print("_________________________________________________________________________________________________")
+    print(" Here's your "+tempstring+". Enjoy, and have a nice day :)                                       ")
+
+def vending_machine():
+    option = input("Enter your choice [C/T/A/H]: ")
+    option.upper()
+    match option:
+        case "C":
+            print("                                                                                                 ")
+            print("_________________________________________________________________________________________________")
+            confirmation = input("Confirm your drink [y]: ")
+            confirmed_option(confirmation,option)
+            return 0
+        case "T":
+            print("                                                                                                 ")
+            print("_________________________________________________________________________________________________")
+            confirmation = input("Confirm your drink [y]: ")
+            confirmed_option(confirmation,option)
+            return 0
+        case "A":
+            print("                                                                                                 ")
+            print("_________________________________________________________________________________________________")
+            confirmation = input("Confirm your drink [y]: ")
+            confirmed_option(confirmation,option)
+            return 0
+        case "H":
+            print("                                                                                                 ")
+            print("_________________________________________________________________________________________________")
+            confirmation = input("Confirm your drink [y]: ")
+            confirmed_option(confirmation,option)
+            return 0
+        case _:
+            print("                                                                                                 ")
+            print("_________________________________________________________________________________________________")
+            print("Invalid choice, try again.                                                                       ")
+            vending_machine()
+    
+
+options_print()
+time.sleep(2)
+vending_machine()

@@ -1,0 +1,6 @@
+BILL
+
+Emission Date: 27-02-2022
+
+Client: Joe Berringer
+Produs: Cartus 7.62x45mm, Pret: 1.00 leu, TVA: 72.99 lei, Cantitate: 12345
