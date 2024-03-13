@@ -1,0 +1,29 @@
+def string_generative_automata(string_sequence):
+    decomposed_string_sequence = list(string_sequence)
+    final_state = '';
+    current_state = 'A';
+    for char in decomposed_string_sequence:
+        match char:
+            case '0': 
+                if current_state == 'A': 
+                    current_state = 'B';
+                    final_state = current_state;
+                    continue
+                if current_state == 'B': 
+                    current_state = 'A';
+                    final_state = current_state;
+                    continue
+            case '1':
+                if current_state == 'A': current_state = 'A';
+                if current_state == 'B': current_state = 'B';
+                final_state = current_state;
+                continue
+            case _:
+                print("This sequence accepts only 1 and 0. Try again.")
+                return;
+    print("The final state of this sequence is: "+final_state)
+
+string_generative_automata("010")
+string_generative_automata("110")
+string_generative_automata("1001")
+string_generative_automata("asdas")

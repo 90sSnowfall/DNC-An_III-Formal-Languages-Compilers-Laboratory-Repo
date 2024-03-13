@@ -1,0 +1,35 @@
+import random
+
+def random_parking_state_generator(parking_lot_size,parking_lot):
+    for index in range(0,parking_lot_size):
+        coinflip = random.randint(0, 1)
+        if(coinflip == 0): parking_lot[index] = "C" #Clear
+        if(coinflip == 1): parking_lot[index] = "O" #Occupied
+    return parking_lot;
+
+def search_empty_spots(parking_lot,results):
+    results = 0
+    emptySlots = list()
+    for index in range(0,len(parking_lot)):
+        if(parking_lot[index] == "C"):
+            emptySlots.append(parking_lot[index])
+            results = results + 1
+    return parking_lot
+    
+
+
+def parking_lot_management_system(parking_lot_size):
+    print("A car arrives in the parking lot, the machine will return empty slots")
+    results = 0
+    parking_lot = [None] * parking_lot_size
+    parking_lot = random_parking_state_generator(parking_lot_size,parking_lot)
+    emptySlots = search_empty_spots(parking_lot,results)
+    if (results != 0 ):
+        print("Here's a list of available parking slots, choose one:")
+        for i in range(0,len(emptySlots-1)):
+            print(str(i))
+    
+
+parking_lot_management_system(10)
+
+    
